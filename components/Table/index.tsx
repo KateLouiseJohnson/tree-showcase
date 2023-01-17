@@ -8,10 +8,6 @@ const styles = StyleSheet.create(
     container: {
       flexDirection: 'row',
       flexWrap: 'wrap',
-      marginVertical: 'auto',
-      // Temp, remove after
-      border: 'dotted',
-      backgroundColor: 'green',
     }
   }
 )

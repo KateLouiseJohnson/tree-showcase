@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Tree } from '../../types'
 import { Card } from '../Card'
-import { FlatList, TouchableOpacity, View, ViewToken, StyleSheet } from 'react-native'
+import { FlatList, TouchableOpacity, View, ViewToken, StyleSheet, Dimensions } from 'react-native'
 import { Dots } from './Dots'
 
 const viewConfigRef = { viewAreaCoveragePercentThreshold: 95 }
@@ -9,19 +9,7 @@ const viewConfigRef = { viewAreaCoveragePercentThreshold: 95 }
 const styles = StyleSheet.create(
   {
     container: {
-      paddingVertical: 30,
-    },
-    dots: {
-      flexDirection: 'row',
-      justifyContent:'center',
-      marginVertical: 20,
-    },
-    dot: {
-      width: 10,
-      height: 10,
-      backgroundColor: 'grey',
-      borderRadius: 50,
-      marginHorizontal: 5,
+      paddingTop: 40,
     },
   }
 )
@@ -41,13 +29,13 @@ export const Carousel = ({ trees }: CarouselProps) => {
   })
 
   const renderCarouselItems: React.FC<{item: Tree}> = ({item}) => (
-    <TouchableOpacity activeOpacity={1}>
+    <TouchableOpacity activeOpacity={1} style={{alignSelf: 'flex-start'}} >
       <Card title={item.name} subTitle={item.species} imageUrl={item.imageUrl} />
     </TouchableOpacity>
   )
 
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList 
         data={trees} 
         renderItem={renderCarouselItems} 

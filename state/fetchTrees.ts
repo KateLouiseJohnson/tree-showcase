@@ -11,7 +11,7 @@ export const fetchTrees = async (dispatch: Dispatch) => {
     const decodedData = treesDecoder.run(data)
     if (decodedData.type === 'FAIL') {
       dispatch(setTreesFetchedFailure())
-      console.log('Decoding error:', decodedData.error)
+      console.log('Decoding error:', decodedData.error) // Better handled by a backend and logged
     } else {
       dispatch(setTreesFetchedSuccess(decodedData.value.trees))
     }

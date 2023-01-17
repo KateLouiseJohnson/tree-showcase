@@ -6,7 +6,7 @@ const styles = StyleSheet.create(
     dots: {
       flexDirection: 'row',
       justifyContent:'center',
-      marginVertical: 20,
+      paddingVertical: 20,
     },
     dot: {
       width: 10,
@@ -25,35 +25,33 @@ type DotsProps = {
 
 export const Dots = ({ index, end }: DotsProps) => {
   return (
-    <View>
-      <View style={styles.dots}>
+    <View style={styles.dots}>
+        <View 
+          style={[
+            styles.dot, 
+            { 
+              backgroundColor: index === 0 ? 'black' : 'grey'
+            }
+          ]} 
+        />
+        {end > 1 && (
           <View 
             style={[
               styles.dot, 
               { 
-                backgroundColor: index === 0 ? 'black' : 'grey'
+                backgroundColor: index > 0 && index < end ? 'black' : 'grey'
               }
             ]} 
           />
-          {end > 1 && (
-            <View 
-              style={[
-                styles.dot, 
-                { 
-                  backgroundColor: index > 0 && index < end ? 'black' : 'grey'
-                }
-              ]} 
-            />
-          )}
-          <View 
-            style={[
-              styles.dot, 
-              { 
-                backgroundColor: index === end ? 'black' : 'grey'
-              }
-            ]} 
-          />
-      </View>
+        )}
+        <View 
+          style={[
+            styles.dot, 
+            { 
+              backgroundColor: index === end ? 'black' : 'grey'
+            }
+          ]} 
+        />
     </View>
   )
 }

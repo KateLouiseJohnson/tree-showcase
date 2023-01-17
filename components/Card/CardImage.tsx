@@ -1,16 +1,21 @@
-import React from 'react'
-import { Image, StyleSheet, Platform, Dimensions } from 'react-native'
+import React, { useState } from 'react'
+import { Image, Text, StyleSheet, Platform, Dimensions, View } from 'react-native'
 import { getBlurSettings } from '../../utils/getBlurSetting'
+import { isMobile } from 'react-device-detect'
 
 const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create(
   {
     image: {
-      width: Platform.OS === 'web' ? 200 : width,
-      height: Platform.OS === 'web' ? 200 : width,
+      width: isMobile=== false ? 200 : width,
+      height: isMobile=== false ? 200 : width,
       resizeMode: 'cover',
     },
+    broken: {
+      alignItems: 'center',
+      justifyContent: 'center',
+    }
   }
 )
 
@@ -22,12 +27,23 @@ type CardImageProps = {
 export const CardImage = ({  imageUrl, isImageHidden}: CardImageProps) => {
   // Native requires a higher setting for blur
   const blurSetting = getBlurSettings(Platform.OS)
+  const [isBroken, setIsBroken] = useState(false)
 
-  return (
-  <Image 
-    style={styles.image} 
-    blurRadius={isImageHidden ? blurSetting : 0} 
-    source={{uri: imageUrl}} 
-  />
+  return (<>
+    {isBroken && 
+      <View style={[styles.image, styles.broken]}>
+        <Text>Image missing</Text>
+      </View>
+    }
+    {!isBroken && <Image 
+      style={styles.image} 
+      blurRadius={isImageHidden ? blurSetting : 0} 
+      source={{uri: imageUrl}} 
+      onError={() => {
+        // Adding button disabling here would be good
+        setIsBroken(true)
+      }}
+    />}
+  </>
   )
 }

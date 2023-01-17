@@ -3,13 +3,17 @@ import {View, StyleSheet } from 'react-native'
 import { Button } from '../Buttons'
 import { CardHeader } from './CardHeader'
 import { CardImage } from './CardImage'
+import { isMobile } from 'react-device-detect'
 
 const styles = StyleSheet.create(
   {
     container: {
-      // Temp, remove after
-      border: 'dashed',
+      paddingHorizontal: isMobile === false ? 20 : 0, // Specifically detect for false as android appears not to work
+      paddingBottom: isMobile === false ? 10 : 0,
     },
+    button: {
+      backgroundColor: '#000000',
+    }
   }
 )
 
@@ -30,7 +34,7 @@ export const Card = ({ title, subTitle, imageUrl}: CardProps) => {
     <View style={styles.container}>
       <CardHeader title={title} subTitle={subTitle} />
       <CardImage imageUrl={imageUrl} isImageHidden={isImageHidden} />
-      <View>
+      <View style={styles.button}>
         <Button isShowRevealText={isImageHidden} onPress={onButtonPress} />
       </View>
     </View>

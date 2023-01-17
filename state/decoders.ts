@@ -2,6 +2,7 @@
 import { Decoder } from 'elm-decoders';
 import { Tree } from '../types'
 
+// Decoder is used here to validate the data and then serialize
 const treeDecoder: Decoder<Tree> = Decoder.object({
   name: Decoder.string,
   species_name: Decoder.string,
