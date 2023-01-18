@@ -1,4 +1,3 @@
-
 import { Decoder } from 'elm-decoders';
 import { Tree } from '../types'
 

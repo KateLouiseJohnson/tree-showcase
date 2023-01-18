@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tree showcase state test should set failed 1`] = `
+Object {
+  "payload": undefined,
+  "type": "treeShowcase/setTreesFetchedFailure",
+}
+`;
+
+exports[`Tree showcase state test should set failed 2`] = `
+Object {
+  "treeShowcase": Object {
+    "failure": true,
+    "fetching": false,
+    "success": false,
+    "trees": Array [],
+  },
+}
+`;
+
+exports[`Tree showcase state test should set initial state 1`] = `
+Object {
+  "treeShowcase": Object {
+    "failure": false,
+    "fetching": false,
+    "success": false,
+    "trees": Array [],
+  },
+}
+`;
+
+exports[`Tree showcase state test should set loading 1`] = `
+Object {
+  "payload": undefined,
+  "type": "treeShowcase/setTreesFetching",
+}
+`;
+
+exports[`Tree showcase state test should set loading 2`] = `
+Object {
+  "treeShowcase": Object {
+    "failure": false,
+    "fetching": true,
+    "success": false,
+    "trees": Array [],
+  },
+}
+`;
+
+exports[`Tree showcase state test should set success 1`] = `
+Object {
+  "payload": Object {
+    "trees": Array [
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Baobab_Adansonia_digitata.jpg",
+        "name": "Baobab",
+        "species": "Adansonia",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/16/Red_mangrove-everglades_natl_park.jpg",
+        "name": "Red Mangrove",
+        "species": "Rhizophora mangle",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg",
+        "name": "Common Hornbeam",
+        "species": "Carpinus betulus",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Quercus_cerris.JPG",
+        "name": "Turkey Oak",
+        "species": "Quercus cerris",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pinus_syluestriformis_%28Takenouchi%29T.Wang_ex_Cheng.JPG",
+        "name": "Japanese red pine",
+        "species": "Pinus densiflora",
+      },
+    ],
+  },
+  "type": "treeShowcase/setTreesFetchedSuccess",
+}
+`;
+
+exports[`Tree showcase state test should set success 2`] = `
+Object {
+  "treeShowcase": Object {
+    "failure": false,
+    "fetching": false,
+    "success": true,
+    "trees": Object {
+      "trees": Array [
+        Object {
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Baobab_Adansonia_digitata.jpg",
+          "name": "Baobab",
+          "species": "Adansonia",
+        },
+        Object {
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/16/Red_mangrove-everglades_natl_park.jpg",
+          "name": "Red Mangrove",
+          "species": "Rhizophora mangle",
+        },
+        Object {
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg",
+          "name": "Common Hornbeam",
+          "species": "Carpinus betulus",
+        },
+        Object {
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Quercus_cerris.JPG",
+          "name": "Turkey Oak",
+          "species": "Quercus cerris",
+        },
+        Object {
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pinus_syluestriformis_%28Takenouchi%29T.Wang_ex_Cheng.JPG",
+          "name": "Japanese red pine",
+          "species": "Pinus densiflora",
+        },
+      ],
+    },
+  },
+}
+`;

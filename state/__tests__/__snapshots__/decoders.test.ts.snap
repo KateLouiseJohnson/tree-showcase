@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`treesDecoder should decode response from api 1`] = `
+Object {
+  "type": "OK",
+  "value": Object {
+    "trees": Array [
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Baobab_Adansonia_digitata.jpg",
+        "name": "Baobab",
+        "species": "Adansonia",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/16/Red_mangrove-everglades_natl_park.jpg",
+        "name": "Red Mangrove",
+        "species": "Rhizophora mangle",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg",
+        "name": "Common Hornbeam",
+        "species": "Carpinus betulus",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Quercus_cerris.JPG",
+        "name": "Turkey Oak",
+        "species": "Quercus cerris",
+      },
+      Object {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pinus_syluestriformis_%28Takenouchi%29T.Wang_ex_Cheng.JPG",
+        "name": "Japanese red pine",
+        "species": "Pinus densiflora",
+      },
+    ],
+  },
+}
+`;
+
+exports[`treesDecoder should fail for invalid data 1`] = `
+Object {
+  "error": Object {
+    "trees": Array [
+      Array [
+        0,
+        Object {
+          "image": Object {
+            "error": "Not a string",
+            "value": undefined,
+          },
+          "name": Object {
+            "error": "Not a string",
+            "value": undefined,
+          },
+          "species_name": Object {
+            "error": "Not a string",
+            "value": undefined,
+          },
+        },
+      ],
+    ],
+  },
+  "type": "FAIL",
+}
+`;
