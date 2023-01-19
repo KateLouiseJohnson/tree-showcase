@@ -22,5 +22,5 @@ export const Button = ({ isShowRevealText, onPress }: ButtonProps) => {
     setShowRevealText(!isShowRevealText)
   }
 
-  return (<ReactButton color={'#000000'} title={showRevealText ? revealText : hideText} onPress={onButtonPress}/>)
+  return (<ReactButton color={'#000000'} title={showRevealText ? revealText : hideText} onPress={onButtonPress} accessibilityLabel={'Press this button to reveal the image'}/>)
 }
