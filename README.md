@@ -32,10 +32,10 @@ npm test
 Start up the project locally and run the following command:
 
 ```bash
-npx cypress open
+npx cypress run
 ```
 
-**Note:** The limitation of Cypress tests here is that it can only test our app in the browser environment. I'd recommend using storybook for testing react-native components.
+**Note:** The limitation of Cypress tests here is that it can only test our app in the browser environment. I'd recommend setting up storybook for testing react-native components. But we're out of time for that just now.
 
 ## Resources
 
