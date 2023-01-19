@@ -22,9 +22,10 @@ const styles = StyleSheet.create(
 type CardImageProps = {
   imageUrl: string,
   isImageHidden: boolean,
+  accessibilityLabel: string
 }
 
-export const CardImage = ({  imageUrl, isImageHidden}: CardImageProps) => {
+export const CardImage = ({  imageUrl, isImageHidden, accessibilityLabel }: CardImageProps) => {
   // Native requires a higher setting for blur
   const blurSetting = getBlurSettings(Platform.OS)
   const [isBroken, setIsBroken] = useState(false)
@@ -37,6 +38,9 @@ export const CardImage = ({  imageUrl, isImageHidden}: CardImageProps) => {
     }
     {!isBroken && <Image 
       nativeID='image'
+      accessible={true}
+      accessibilityRole={"image"}
+      accessibilityLabel={`${accessibilityLabel} image`}
       style={styles.image} 
       blurRadius={isImageHidden ? blurSetting : 0} 
       source={{uri: imageUrl}} 

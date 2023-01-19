@@ -33,7 +33,7 @@ export const Card = ({ title, subTitle, imageUrl}: CardProps) => {
   return (
     <View nativeID={'card'} style={styles.container}>
       <CardHeader title={title} subTitle={subTitle} />
-      <CardImage imageUrl={imageUrl} isImageHidden={isImageHidden} />
+      <CardImage imageUrl={imageUrl} isImageHidden={isImageHidden} accessibilityLabel={`${title} ${subTitle}`} />
       <View style={styles.button}>
         <Button isShowRevealText={isImageHidden} onPress={onButtonPress} />
       </View>
