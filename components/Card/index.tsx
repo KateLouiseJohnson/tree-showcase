@@ -31,7 +31,7 @@ export const Card = ({ title, subTitle, imageUrl}: CardProps) => {
   }
 
   return (
-    <View style={styles.container}>
+    <View nativeID={'card'} style={styles.container}>
       <CardHeader title={title} subTitle={subTitle} />
       <CardImage imageUrl={imageUrl} isImageHidden={isImageHidden} />
       <View style={styles.button}>

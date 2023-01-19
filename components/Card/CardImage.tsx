@@ -36,6 +36,7 @@ export const CardImage = ({  imageUrl, isImageHidden}: CardImageProps) => {
       </View>
     }
     {!isBroken && <Image 
+      nativeID='image'
       style={styles.image} 
       blurRadius={isImageHidden ? blurSetting : 0} 
       source={{uri: imageUrl}} 
