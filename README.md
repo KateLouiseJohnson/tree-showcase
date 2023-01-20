@@ -29,7 +29,7 @@ npm test
 
 ### E2E tests
 
-Start up the project locally and run the following command:
+Start up the project locally, make sure web is running by hitting 'w' and run the following command:
 
 ```bash
 npx cypress run
