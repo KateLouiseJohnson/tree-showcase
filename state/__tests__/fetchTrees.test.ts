@@ -2,12 +2,6 @@ import {describe, expect, it} from '@jest/globals'
 import { fetchTrees } from '../fetchTrees'
 import { apiResponsePayload } from '../../fixtures/apiResponsePayload'
 
-// global.fetch = jest.fn(() =>
-//   Promise.resolve({
-//     json: () => Promise.resolve(apiResponsePayload),
-//   })
-// )
-
 const fetchMock = jest.fn()
 global.fetch = fetchMock
 
